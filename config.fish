@@ -11,8 +11,8 @@ alias migrate="php artisan migrate"
 alias tk="php artisan tinker"
 alias s="php artisan serve"
 alias ds="php artisan dump-server"
-alias p="phpunit"
-alias pf="phpunit --filter "
+alias p="vendor/bin/phpunit"
+alias pf="vendor/bin/phpunit --filter "
 
 # Git Alias
 alias nah='git reset --hard;git clean -df'
