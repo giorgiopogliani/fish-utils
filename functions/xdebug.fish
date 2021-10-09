@@ -1,5 +1,5 @@
 function xdebug 
-   set iniFileLocation "/usr/local/etc/php/7.4/php.ini";
+   set iniFileLocation "/usr/local/etc/php/8.0/php.ini";
    
    set currentLine (cat $iniFileLocation | grep xdebug.so)
 
