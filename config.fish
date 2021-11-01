@@ -1,6 +1,11 @@
 export LC_ALL=en_US.UTF-8
 
 #====
+# Starship
+#====
+source (/usr/local/bin/starship init fish --print-full-init | psub)
+
+#====
 # dircolors - color setup for ls
 #====
 eval (gdircolors -c ~/.dir_colors)
