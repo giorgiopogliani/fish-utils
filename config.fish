@@ -59,3 +59,11 @@ alias ks="kubectl get services"
 
 # Craft alias
 alias craft="php craft"
+
+# Curl
+alias curl-nocache='curl -k -LI -H "Cache-Control: no-cache, no-store, must-revalidate" -H "Pragma: no-cache" -H "Expires: 0"'
+
+# Npm
+alias dev="npm run dev"
+alias build="npm run build"
+alias start="npm run start"
