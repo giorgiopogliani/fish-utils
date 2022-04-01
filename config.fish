@@ -8,7 +8,7 @@ source (/usr/local/bin/starship init fish --print-full-init | psub)
 #====
 # dircolors - color setup for ls
 #====
-eval (gdircolors -c ~/.dir_colors)
+set -x LS_COLORS (vivid generate one-dark)
 
 #====
 # Append paths to shell enviroment
@@ -20,6 +20,11 @@ set -g fish_user_paths "/usr/local/bin" $fish_user_paths
 
 # Composer
 set -g fish_user_paths "~/.composer/vendor/bin" $fish_user_paths
+
+# Go
+set -x GOPATH $HOME/.go
+set -g fish_user_paths "$GOROOT/bin" $fish_user_paths
+set -g fish_user_paths "$GOPATH/bin" $fish_user_paths
 
 #====
 # Aliases
@@ -40,13 +45,17 @@ alias nah='git reset --hard;git clean -df'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gpo="git push origin"
 alias git="hub"
+alias gv="open -a 'Sublime Merge' ."
 
 # Images Alias
 alias optimize="convert -strip -interlace Plane -sampling-factor 4:2:0 -quality 80%"
 
 # Tool Alias
-alias l="ls --color"
-alias ls="ls --color"
+alias ls="ls --color=auto"
+alias l="ls"
+alias la="ls -Ah"
+alias ll="ls -lh"
+alias lla="ls -Alh"
 alias cp='rsync -p --progress'
 
 # Composer alias
@@ -67,3 +76,7 @@ alias curl-nocache='curl -k -LI -H "Cache-Control: no-cache, no-store, must-reva
 alias dev="npm run dev"
 alias build="npm run build"
 alias start="npm run start"
+
+# Functions
+alias pep="peco_project"
+alias peh="peco_history"
